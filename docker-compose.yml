@@ -11,7 +11,7 @@ services:
     env_file: .env.prod
     environment:
       - NODE_ENV=production
-      - SERVER_URL="${HOST_URL:-https://opensign.pi-srv.com}/app"  # Quotes added for correct YAML parsing
+      - SERVER_URL="${HOST_URL:-https://localhost:3001}/app"  # Quotes added for correct YAML parsing
     networks:
       - app-network
 
@@ -51,7 +51,7 @@ services:
     networks:
       - app-network
     environment:
-      - HOST_URL="${HOST_URL:-https://opensign.pi-srv.com}"  # Quotes added for environment variable
+      - HOST_URL="${HOST_URL:-localhost:3001}"  # Quotes added for environment variable
 
 networks:
   app-network:
